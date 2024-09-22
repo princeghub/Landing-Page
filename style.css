@@ -31,10 +31,10 @@
 
     --fs-body: var(--fs-400);
     --fs-ph: var(--fs-900);
-    --fs-sh: var(var(--fs-800));
-    --fs-subh:var(var(--fs-500))
-    --fs-nav: var(var(--fs-300));
-    --fs-button: var(var(--fs-400));
+    --fs-sh: var(--fs-800);
+    --fs-subh:var(--fs-500);
+    --fs-nav: var(--fs-300);
+    --fs-button: var(--fs-400);
 
 }
 
@@ -90,7 +90,7 @@ html,
 body {
   min-height: 100%;
   line-height: 1.5;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 /* Set shorter line heights on headings and interactive elements */
@@ -159,7 +159,7 @@ a{
 
 .button{
   padding: .75rem 1.5rem;
-  background: var(--Primery-color);
+  background: transparent;
   color: var(--secondery-color);
   outline: none;
   border: none;
@@ -167,15 +167,16 @@ a{
   font-size: var(--fs-500);
   font-weight: var(--fw-bold);
   transition: .3s ease-in-out;
-  border: 1px solid transparent;
+  border: 1px solid var(--acent-color);
   display: flex;
   align-items: center;
   gap: .3rem;
 }
 .button:hover{
-  background-color: transparent;
-  border: 1px solid var(--secondery-color);
+  background-color: var(--acent-color);
+  border: 1px solid transparent;
   padding: .75rem 1.5rem;
+  color: var(--white-color);
 }
 
 .container{
@@ -204,6 +205,10 @@ a{
   gap: 1rem;
 }
 
+.flow * + *{
+  margin-top: 1em;
+}
+
 /* ////////////////////////// Utility Class End /////////////////////////// */
 
 
@@ -220,6 +225,10 @@ a{
 }
 .main-header {
   position: relative;
+  padding: .8em 0;
+}
+.main-header h1{
+  font-size: var(--fs-700);
 }
 
 
@@ -232,6 +241,9 @@ a{
 }
 .mobile-nav-toggle .close-manu{
   display: none;
+}
+.main-header nav{
+  font-size: var(--fs-500);
 }
 
 @media(max-width: 50em){
@@ -246,11 +258,119 @@ a{
   .header-top{
     display: none;
   }
+  .button{
+    font-size: var(--fs-400);
+  }
 }
 
 .hero{
   background-image: url(./Image/hero.jpg);
   background-size: cover;
-  height: calc(100vh - 150px);
+  height: calc(100vh - 100px);
   background-position: center;
+}
+.hero .content{
+  margin-top: 5em;
+  background: var(--white-color);
+  background: var(--white-color);
+  border-left: 5px solid var(--acent-color);
+  padding: 1.5em;
+}
+.hero .content .cta{
+  display: flex;
+  align-items: center;
+  gap: 3em;
+}
+.hero .content .cta span{
+  background-color: var(--acent-color);
+  height: 1.5em;
+  width: 1.5em;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 1.5em;
+  font-size: 1.8em;
+  margin-top: -.1em;
+  color: var(--white-color);
+}
+
+.about-us{
+  margin-top: 8em;
+}
+.about-us .left{
+  position: relative;
+}
+.about-us .left img{
+  margin-bottom: 2em;
+}
+.about-us .left .img-1{
+  position: relative;
+  padding: 1em;
+}
+.about-us .left .img-1 img{
+  margin-left: -1em;
+}
+
+.about-us .left .img-1::after{
+  content: "";
+  position: absolute;
+  left: -15px;
+  top: 0;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 200px 200px 0 0;
+  border-color: var(--acent-color) transparent transparent transparent;
+  z-index: -111;
+}
+.about-us .left .img-2{
+  position: relative;
+  padding: 1em;
+}
+.about-us .left .img-2 img{
+  margin-left: -1em;
+}
+.about-us .left .img-2::after{
+  content: "";
+  position: absolute;
+  left: -15px;
+  top: 0;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 200px 200px 0 0;
+  border-color: var(--Primery-color) transparent transparent transparent;
+  z-index: -111;
+}
+.about-us .right{
+  margin-top: 2em;
+}
+.about-us .right h2, p{
+  margin-bottom: .5em;
+}
+.about-us .right .about1, .about2{
+  margin-bottom: 2em;
+}
+.about-us .right .fa-sun{
+  font-size: 3em;
+  margin-right: .4em;
+  color: var(--acent-color);
+}
+@media(max-width:50em){
+  .about-us .left .img-2::after{    
+    border-width: 100px 100px 0 0;
+  }
+  .about-us .left .img-1::after{
+    border-width: 100px 100px 0 0;
+  }
+  .about-us .left .img-2{
+    position: relative;
+    padding: .5em;
+  }
+  .about-us .left .img-1{
+    position: relative;
+    padding: .5em;
+  }
+  .about-us{
+    margin-top: 3em;
+  }
 }
