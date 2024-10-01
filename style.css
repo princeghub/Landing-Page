@@ -262,6 +262,9 @@ span{
 .flow * + *{
   margin-top: 1em;
 }
+.margine-auto{
+  margin: 0 auto;
+}
 
 /* ////////////////////////// Utility Class End /////////////////////////// */
 
@@ -454,7 +457,6 @@ span{
 /* =========== Course css =========== */
 .course{
   background: #f5f4f4c5;
-  margin: 4em 0;
   padding: 2em 0;
 }
 .course h2{
@@ -512,10 +514,18 @@ span{
   color: var(--acent-color);
 }
 
-.growth {}
+
+/* ============ Growth CSS =========== */
+
+.growth {
+  padding: 2em;
+}
+.growth .growth-container{
+  margin: 0 auto;
+}
 .growth .growth-box{
-  height: 280px;
   width: 280px;
+  height: 280px;
   border-radius: 50%;
   border: 1em solid #eaeaeabd;
   padding: 1em;
@@ -523,3 +533,74 @@ span{
 .growth .growth-box i{
   color: var(--acent-color);
 }
+
+
+/* =========== Lecturer css ================ */
+
+.lecturer{
+  background: #f3f3f3;
+  padding: 4em 0;
+  opacity: .9;
+}
+.lecturer .title-section .lecture{
+  position: relative;
+}
+.lecturer .title-section .lecture::after{
+  content: attr(data-text);
+  position: absolute;
+  top: -70px;
+  left: 50%;
+  font-size: 8em;
+  font-weight: 800;
+  transform: translate(-50%, 0);
+  z-index: -1;
+  opacity: 1;
+  color: var(--white-color);
+}
+
+.lecturer .profile-container{
+  margin-top: 10em;
+  text-align: center;
+}
+.lecturer .profile-container .profile{
+  position: relative;
+  background: var(--white-color);
+  width: 280px;
+  height: 300px;
+  padding-top: 12em;
+  text-align: center;
+}
+.lecturer .profile-container .profile img{
+  position: absolute;
+  left: 50%;
+  top: -7em;
+  height: 250px;
+  width: 250px;
+  border-radius: 50%;
+  border: .8em solid #dadada;
+  transform: translate(-50%, 0);
+}
+@media(max-width:50em){
+  .lecturer .profile-container .profile{
+    width: 90%;
+    margin: 0 auto;
+    margin-bottom: 9em;
+  }
+}
+
+/* ======== clintes ========== */
+.clintes{
+  background: url(./Image/bg.jpg), #1111118f ;
+  background-size: cover;
+  background-blend-mode: multiply;
+  background-position: center;
+  height: 100vh;
+}
+.clintes .content-box{
+  width: 70%;
+  height: 300px;
+  background: #000;
+  border: 2px solid var(--white-color);
+}
+
+
